@@ -1,0 +1,9 @@
+mat-card.container {
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+}
+  
+  mat-card.container > * {
+    width: 100%;
+}

@@ -3,14 +3,33 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CadastroMedicoComponent } from './cadastro-medico/cadastro-medico.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CadastroPacienteComponent } from './cadastro-paciente/cadastro-paciente.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app.routing.module';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './shared-components/header/header.component';
+import { FooterComponent } from './shared-components/footer/footer.component';
+import { MaterialModule } from './shared-components/material.modules';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroMedicoComponent
+    CadastroMedicoComponent,
+    CadastroPacienteComponent,
+    HomeComponent,
+    LoginComponent,
+    NotFoundComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
