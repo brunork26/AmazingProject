@@ -1,0 +1,6 @@
+mat-toolbar.footer {
+    position: fixed;
+    bottom: 0;
+    height: 64px;
+    background-color: aqua;
+}

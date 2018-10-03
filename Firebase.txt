@@ -1,0 +1,2 @@
+Arquivo para tracking de dados do firebase.
+Ainda preciso implementar essa treta.
