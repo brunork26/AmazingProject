@@ -21,8 +21,8 @@ export class CadastroComponent implements OnInit {
   constructor(private authService: AuthService,
               private formBuilder: FormBuilder) {
               this.form = this.formBuilder.group({
-                email: new FormControl('', [Validators.required, Validators.email]),
-                password: new FormControl('', [Validators.required])
+                email: ['', [Validators.required, Validators.email]],
+                password: ['', [Validators.required]]
               });
    }
 
