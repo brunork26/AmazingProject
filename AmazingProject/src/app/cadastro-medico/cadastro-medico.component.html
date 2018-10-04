@@ -1,33 +1,17 @@
-
-
 <mat-card>Cadastro Médico</mat-card>
-
 <form class="medico-form">
-
   <mat-form-field class="mat-full" appearance="standard">
     <input matInput placeholder="Nome" pattern="[A-Za-z\s]+">
   </mat-form-field>
-<br/>
-<mat-form-field class="mat-full" appearance="standard">
+  <br/>
+  <mat-form-field class="mat-full" appearance="standard">
     <input matInput placeholder="CPF">
   </mat-form-field>
-<br/>
+  <br/>
   <mat-form-field class="mat-full" appearance="standard">
     <input matInput placeholder="CREMERS">
   </mat-form-field>
   <br/>
-
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="E-mail" [formControl]="email" required>
-    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-    <br/>
-
-  <mat-form-field class="mat-full" appearance="standard"  >
-      <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'">
-      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-  </mat-form-field>
-  
 </form>
 
 
