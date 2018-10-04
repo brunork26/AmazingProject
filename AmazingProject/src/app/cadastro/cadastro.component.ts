@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from '../shared-service/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,18 +9,37 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
-  public email = new FormControl('', [Validators.required, Validators.email]);
+  public form: FormGroup;
   public hide ='true';
   
   getErrorMessage() {
-    return this.email.hasError('required') ? 'Digite seu E-mail' :
-        this.email.hasError('email') ? 'Email inválido' :
+    return this.form.get('email').hasError('required') ? 'Digite seu E-mail' :
+           this.form.get('email').hasError('email') ? 'Email inválido' :
             '';
   }
 
-  constructor() { }
+  constructor(private authService: AuthService,
+              private formBuilder: FormBuilder) {
+              this.form = this.formBuilder.group({
+                email: new FormControl('', [Validators.required, Validators.email]),
+                password: new FormControl('', [Validators.required])
+              });
+   }
 
   ngOnInit() {
+  }
+
+  tryRegister() {
+    const value = this.form.value;
+    console.log(value);
+    this.authService.doRegister(value)
+    .then(res => {
+      console.log(res);
+      alert('Registrou');
+    }, err => {
+      console.log(err);
+      alert('Erro');
+    })
   }
 
 }
