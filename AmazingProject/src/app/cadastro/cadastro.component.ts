@@ -39,7 +39,7 @@ export class CadastroComponent implements OnInit {
     }, err => {
       console.log(err);
       alert('Erro');
-    })
+    });
   }
 
 }

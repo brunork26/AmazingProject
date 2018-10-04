@@ -2,5 +2,12 @@
     min-width: 150px;
     max-width: 500px;
     width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
 }
-
+mat-card{
+    text-align: center;
+    margin: 0px auto;
+    display: block; 
+}
