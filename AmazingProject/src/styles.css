@@ -7,6 +7,12 @@
     width: 100%;
   }
   
-  .mat-full{
-    width: 100%;
-  }
+.mat-full{
+  width: 100%;
+}
+
+.centered{
+  text-align: center;
+  margin: 0px auto;
+  display: block; 
+}

@@ -2,9 +2,6 @@
     min-width: 150px;
     max-width: 550px;
     width: 100%;
-    text-align: center;
-    margin: 0px auto;
-    display: block;
 }
 
 .signup {
@@ -12,7 +9,4 @@
 }
 
 mat-card{
-    text-align: center;
-    margin: 0px auto;
-    display: block;
 }

@@ -1,7 +1,7 @@
-<mat-card><h3>Faça Seu Cadastro</h3></mat-card>
+<mat-card class="centered"><h3>Faça Seu Cadastro</h3></mat-card>
 <br/>
 
-<form class="form" [formGroup]="form" (ngSubmit)="tryRegister()">
+<form class="form centered" [formGroup]="form" (ngSubmit)="tryRegister()">
   Preencha o cadastro abaixo. Em seguida, selecione uma das opções disponíveis.
   <mat-form-field class="mat-full" appearance="standard">
     <input matInput placeholder="E-mail" formControlName="email">
