@@ -4,5 +4,8 @@ mat-toolbar.header {
     left:0;
     right:0;
     height: 64px;
-    background-color: aqua;
+    background-color: RGB(31, 58, 147);
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-size: 16px;
 }
