@@ -2,6 +2,7 @@ mat-card.container {
     display: flex;
     flex-direction: column;
     top: 100px;
+    margin-bottom: 120px;
 }
   
   mat-card.container > * {
