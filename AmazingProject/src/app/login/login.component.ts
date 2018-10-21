@@ -10,6 +10,7 @@ import { AuthService } from '../shared-service/auth.service';
 export class LoginComponent implements OnInit {
 
   public form2: FormGroup;
+  
   ngOnInit() {
   }
 

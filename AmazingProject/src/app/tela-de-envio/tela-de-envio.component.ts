@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { SmsService } from '../shared-service/sms.service';
 
 @Component({
@@ -7,14 +8,24 @@ import { SmsService } from '../shared-service/sms.service';
   styleUrls: ['./tela-de-envio.component.css'],
   providers: [SmsService]
 })
+
 export class TelaDeEnvioComponent implements OnInit {
+
+  msg : string;
+  postData : string;                            
+  public formSms: FormGroup;
   
-  postData : string;
+  constructor(private smsService : SmsService, private formBuilder: FormBuilder) { 
+    this.msg = "";
 
-  constructor(private smsService : SmsService) { }
-
-  enviaSMS(){
-    this.smsService.postSMS()
+    // this.formSms = this.formBuilder.group({
+    //   msg: new FormControl(''),
+    //   password: new FormControl('')
+    // });
+  }
+  
+  enviaSMS(numPaciente : number, msgPaciente : string){
+    this.smsService.postSMS(numPaciente,msgPaciente)
     .subscribe(
       data => this.postData = JSON.stringify(data),
       error => alert(error),

@@ -1,18 +1,18 @@
 <mat-card class="centered"><h3> Envio de SMS</h3></mat-card>
+
 <form class="telaEnvio-form centered">
-  
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="Nome do Paciente" pattern="[A-Za-z\s]+">
-  </mat-form-field>
-  <br/>
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="Número do paciente">
-  </mat-form-field>
-  <br/>
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="Mensagem">
-  </mat-form-field>
-  <button mat-flat-button (click) = "enviaSMS()" style="float:right" > Teste SMS </button>
+    <mat-form-field class="mat-full" appearance="standard">
+        <input matInput placeholder="Nome do Paciente" pattern="[A-Za-z\s]+">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard">
+        <input #numPaciente matInput placeholder="Número do paciente">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard">
+        <input  #msgPaciente matInput maxlength="160" placeholder="Mensagem - Máx 160 Caracteres"> {{msg}}
+    </mat-form-field>
+    <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" style="float:right" > Teste SMS </button>
 </form>
 
 

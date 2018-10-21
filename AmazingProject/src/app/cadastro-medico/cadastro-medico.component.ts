@@ -13,19 +13,8 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class CadastroMedicoComponent implements OnInit {
 
-  postData : string;
+  constructor() {}
 
-  constructor(private smsService : SmsService) {}
-
-  enviaSMS(){
-      this.smsService.postSMS()
-      .subscribe(
-        data => this.postData = JSON.stringify(data),
-        error => alert(error),
-        () => console.log("acesso a webapi post ok...")
-      );
-  }
-  
   ngOnInit() {
   }
 }

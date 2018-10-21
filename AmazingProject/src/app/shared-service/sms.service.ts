@@ -10,19 +10,19 @@ import { Observable } from "rxjs";
 export class SmsService {
 
 
-  public token: string;
+  private  token: string;
 
   constructor(private http : Http) {
 
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = ;
+    this.token = "fd0dc4a161c3e8273981424620aefd09";
 
    }
 
-  postSMS(){
+  postSMS(numero : number, mensagem : string){
     let json = JSON.stringify({
-      numero_destino: '51999973747', 
-      mensagem: 'Mensagem teste',
+      numero_destino: numero, 
+      mensagem: mensagem,
       resposta_usuario : false,
       multi_sms: false,
       data_criacao : ''
@@ -33,7 +33,7 @@ export class SmsService {
     alert(params);
     let cabe = new Headers();
     cabe.append('Content-Type', 'application/json');
-    cabe.append('Access-Token', "fd0dc4a161c3e8273981424620aefd09");
+    cabe.append('Access-Token', this.token);
     
     return this.http.post('https://api.totalvoice.com.br/sms', 
     params, {
