@@ -10,10 +10,11 @@
     </mat-form-field>
     <br/>
     <mat-form-field class="mat-full" appearance="standard">
-        <input  #msgPaciente matInput maxlength="160" placeholder="Mensagem - Máx 160 Caracteres"> {{msg}}
+        <input  #msgPaciente matInput maxlength="160" placeholder="Mensagem - máx 160 Caracteres">
     </mat-form-field>
-    <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" style="float:right" > Teste SMS </button>
-</form>
+    <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" style="float:right" > Enviar SMS </button>
+    <button mat-flat-button [routerLink]="['/cadastro']" style="float:left" > Voltar </button>
+  </form>
 
 
   
