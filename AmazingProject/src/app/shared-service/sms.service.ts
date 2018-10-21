@@ -15,7 +15,7 @@ export class SmsService {
   constructor(private http : Http) {
 
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.token = "fd0dc4a161c3e8273981424620aefd09";
+    this.token = ;
 
    }
 
