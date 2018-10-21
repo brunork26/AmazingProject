@@ -3,3 +3,11 @@
     max-width: 500px;
     width: 100%;
 }
+
+.bt-voltar{
+    float: left;
+}
+
+.bt-enviar{
+    float: right;
+}

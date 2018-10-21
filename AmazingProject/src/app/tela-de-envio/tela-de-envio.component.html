@@ -12,8 +12,8 @@
     <mat-form-field class="mat-full" appearance="standard">
         <input  #msgPaciente matInput maxlength="160" placeholder="Mensagem - máx 160 Caracteres">
     </mat-form-field>
-    <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" style="float:right" > Enviar SMS </button>
-    <button mat-flat-button [routerLink]="['/cadastro']" style="float:left" > Voltar </button>
+    <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" class="bt-enviar" > Enviar SMS </button>
+    <button mat-flat-button [routerLink]="['/cadastro']" class="bt-voltar" > Voltar </button>
   </form>
 
 
