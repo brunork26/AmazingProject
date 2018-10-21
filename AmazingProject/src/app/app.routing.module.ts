@@ -7,6 +7,8 @@ import { CadastroPacienteComponent } from './cadastro-paciente/cadastro-paciente
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { environment } from 'src/environments/environment.prod';
+import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
 
 const routes: Routes = [
     { path: '',         
@@ -15,6 +17,7 @@ const routes: Routes = [
     },
     { path: 'home', component: HomeComponent },
     { path: 'cadastro', component: CadastroComponent },
+    { path:'tela-de-envio', component: TelaDeEnvioComponent },
     { path: 'cadastro-medico', component: CadastroMedicoComponent },
     { path: 'cadastro-paciente', component: CadastroPacienteComponent },
     { path: 'login', component: LoginComponent },

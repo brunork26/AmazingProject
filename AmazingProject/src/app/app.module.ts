@@ -20,6 +20,8 @@ import { MaterialModule } from './shared-components/material.modules';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HttpModule } from '@angular/http';
+import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AppComponent,
     CadastroMedicoComponent,
     CadastroPacienteComponent,
+    TelaDeEnvioComponent,
     HomeComponent,
     LoginComponent,
     CadastroComponent,
@@ -41,6 +44,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     MaterialModule
   ],
