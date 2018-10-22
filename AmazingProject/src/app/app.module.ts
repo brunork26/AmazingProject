@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpModule } from '@angular/http';
 import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
+import { AuthService } from './shared-service/auth.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
