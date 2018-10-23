@@ -23,6 +23,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HttpModule } from '@angular/http';
 import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
 import { AuthService } from './shared-service/auth.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserAgendaComponent } from './user-agenda/user-agenda.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { AuthService } from './shared-service/auth.service';
     CadastroComponent,
     NotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserProfileComponent,
+    UserAgendaComponent
   ],
   imports: [
     BrowserModule,
