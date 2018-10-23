@@ -1,4 +1,4 @@
-<mat-card class="centered"><h3> Envio de SMS</h3></mat-card>
+<!-- <mat-card class="centered"><h3> Envio de SMS</h3></mat-card>
 
 <form class="telaEnvio-form centered">
     <mat-form-field class="mat-full" appearance="standard">
@@ -14,8 +14,7 @@
     </mat-form-field>
     <button mat-flat-button (click) = "enviaSMS(numPaciente.value, msgPaciente.value)" class="bt-enviar" > Enviar SMS </button>
     <button mat-flat-button [routerLink]="['/cadastro']" class="bt-voltar" > Voltar </button>
-  </form>
+</form> -->
 
-
-  
-
+<button mat-flat-button (click) = "enviaSMS(number, msg)" class="bt-enviar" > Enviar SMS </button>
+    

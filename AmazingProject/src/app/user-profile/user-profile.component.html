@@ -7,23 +7,26 @@
   <!-- User NOT logged in -->
   <ng-template #guest class="box">
     <h3>Howdy, GUEST</h3>
-    <p class="card-text">Login to get started...</p>
-    <button class="button" routerLink="/login">Login</button>
+    <p class="card-text">Faça login para ver seus dados...</p>
+    <button mat-flat-button routerLink="/login" style="margin-left:5px;">Login</button> 
   </ng-template>
 
   <!-- User logged in -->
   <ng-template #authenticated>
-
-    <mat-grid-list cols="10">
-      <mat-grid-tile [colspan]="4" [rowspan]="1">
-        <div *ngIf="auth.user | async as user">
-          <h3>Olá, {{ user.displayName }}</h3>
-          <img class="card-img-top" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
-          <p class="text-truncate">Email: {{ user.email }}</p>
-          <button class="button" (click)="logout()">Logout</button>
-        </div>
+    <mat-grid-list cols="12" class="overflow">
+      <mat-grid-tile [colspan]="3" [rowspan]="3">
+        <mat-card>
+            <div *ngIf="auth.user | async as user">
+                <h3>Olá, {{ user.displayName }}</h3>
+                <img class="card-img-top" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
+                <p class="text-truncate">Email: {{ user.email }}</p>
+                <button mat-flat-button (click)="logout()" style="margin-left:5px;">Login</button> 
+            </div>
+        </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile class="overflow" [colspan]="6" [rowspan]="3">
+      <mat-grid-tile [colspan]="1" [rowspan]="7">
+        </mat-grid-tile>
+      <mat-grid-tile [colspan]="8" [rowspan]="7">
         <app-user-agenda></app-user-agenda>
       </mat-grid-tile>
     </mat-grid-list>

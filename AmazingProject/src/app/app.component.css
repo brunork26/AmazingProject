@@ -1,8 +1,7 @@
 mat-card.container {
-    display: flex;
-    flex-direction: column;
     top: 100px;
     margin-bottom: 120px;
+    min-width: 1200px;
 }
   
   mat-card.container > * {

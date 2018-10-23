@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { SmsService } from '../shared-service/sms.service';
 
@@ -11,7 +11,9 @@ import { SmsService } from '../shared-service/sms.service';
 
 export class TelaDeEnvioComponent implements OnInit {
 
-  msg : string;
+  @Input() msg;
+  @Input() number;
+  // msg : string;
   postData : string;                            
   public formSms: FormGroup;
   

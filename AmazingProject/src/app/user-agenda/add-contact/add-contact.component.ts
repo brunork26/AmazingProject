@@ -10,6 +10,7 @@ import { UsuarioService } from '../../shared-service/usuario.service';
 export class AddContactComponent implements OnInit {
 
   @Input() contact: Contact;
+  public contacts;
   public form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private userService: UsuarioService) {
@@ -24,7 +25,8 @@ export class AddContactComponent implements OnInit {
   }
 
   public saveContact(){
-    this.userService.createItem(this.form.value);
+    console.log(this.form.value)
+    this.userService.createContact(this.form.value);
   }
 
 }

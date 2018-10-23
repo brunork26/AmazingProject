@@ -29,6 +29,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AddContactComponent } from './user-agenda/add-contact/add-contact.component';
+import { ListContactComponent } from './user-agenda/list-contact/list-contact.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AddContactComponent } from './user-agenda/add-contact/add-contact.compo
     FooterComponent,
     UserProfileComponent,
     UserAgendaComponent,
-    AddContactComponent
+    AddContactComponent,
+    ListContactComponent
   ],
   imports: [
     BrowserModule,

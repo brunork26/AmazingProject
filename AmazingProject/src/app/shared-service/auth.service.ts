@@ -32,18 +32,17 @@ export class AuthService {
       switchMap(user => {
         if (user) {
           this.userId = user.uid;
+          localStorage.setItem('uid', this.userId);
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
       })
-      // tap(user => localStorage.setItem('user', JSON.stringify(user))),
-      // startWith(JSON.parse(localStorage.getItem('user')))
     );
 
    }
 
-  googleLogin() {
+  public googleLogin() {
     const provider = new auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
@@ -58,7 +57,7 @@ export class AuthService {
       .catch(error => this.handleError(error));
   }
 
-  emailSignUp(email: string, password: string, displayName: string) {
+  public emailSignUp(email: string, password: string, displayName: string) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(credential => {
@@ -71,7 +70,7 @@ export class AuthService {
       .catch(error => this.handleError(error));
   }
 
-  emailLogin(email: string, password: string) {
+  public emailLogin(email: string, password: string) {
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then(credential => {
@@ -82,8 +81,9 @@ export class AuthService {
       .catch(error => this.handleError(error));
   }
 
-  signOut() {
+  public signOut() {
     this.afAuth.auth.signOut().then(() => {
+      localStorage.clear();
       this.router.navigate(['/']);
     });
   }
@@ -92,6 +92,11 @@ export class AuthService {
   private handleError(error: Error) {
     console.error(error);
     alert(error.message);
+  }
+
+  // get userId
+  public getUID(): string{
+    return this.userId;
   }
 
   // Sets user data to firestore after succesful login
