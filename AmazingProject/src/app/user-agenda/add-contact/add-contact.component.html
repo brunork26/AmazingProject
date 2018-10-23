@@ -1,0 +1,20 @@
+<form class="form centered" [formGroup]="form" (ngSubmit)="saveContact()">
+    <mat-form-field class="mat-full" appearance="standard">
+      <input [ngModel]="contact.email" matInput placeholder="E-mail" formControlName="email">
+      <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard" >
+      <input [ngModel]="contact.name" matInput placeholder="Name" type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="mat-full" appearance="standard">
+      <input [ngModel]="contact.phone" matInput placeholder="Telefone" type="text" formControlName="phone">
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard">
+      <input [ngModel]="contact.date" matInput placeholder="data" type="date" formControlName="date">
+    </mat-form-field>
+    <br/>
+    <br/>
+    <button mat-flat-button style="margin-left:5px;" class="signup" type="submit">Adicionar</button> 
+  </form>

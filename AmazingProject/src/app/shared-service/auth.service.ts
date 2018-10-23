@@ -21,6 +21,8 @@ export class AuthService {
 
   private user: Observable<firebase.User>;
 
+  public userId: string;
+
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -29,6 +31,7 @@ export class AuthService {
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
+          this.userId = user.uid;
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);

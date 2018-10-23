@@ -6,8 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-agenda.component.css']
 })
 export class UserAgendaComponent implements OnInit {
+  
+  public contact: Contact = {
+    name: '',
+    phone: '',
+    email: '',
+    date: new Date()
+  }
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }

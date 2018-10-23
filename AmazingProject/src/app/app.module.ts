@@ -28,6 +28,7 @@ import { UserAgendaComponent } from './user-agenda/user-agenda.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { AddContactComponent } from './user-agenda/add-contact/add-contact.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
     HeaderComponent,
     FooterComponent,
     UserProfileComponent,
-    UserAgendaComponent
+    UserAgendaComponent,
+    AddContactComponent
   ],
   imports: [
     BrowserModule,
