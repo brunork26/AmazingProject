@@ -25,9 +25,9 @@ export class CadastroComponent implements OnInit {
               this.form = this.formBuilder.group({
                 email: ['', [Validators.required, Validators.email]],
                 password: ['', Validators.required],
-                cremers: ['', Validators.required],
+                // cremers: ['', Validators.required],
                 name: ['', Validators.required],
-                cpf: ['', Validators.required]
+                // cpf: ['', Validators.required]
               });
    }
 
@@ -37,11 +37,11 @@ export class CadastroComponent implements OnInit {
   tryRegister() {
     const value = this.form.value;
     console.log(value);
-    this.authService.doRegister(value)
+    this.authService.emailSignUp(value.email, value.password, value.name)
     .then(res => {
       console.log(res);
       alert('Registrou');
-      this.userService.createUser({name: this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res.user.uid});
+      //this.userService.createUser({name: this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res['user'].uid});
     }, err => {
       console.log(err);
       alert('Erro');

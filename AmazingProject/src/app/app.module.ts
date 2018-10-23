@@ -25,7 +25,9 @@ import { TelaDeEnvioComponent } from './tela-de-envio/tela-de-envio.component';
 import { AuthService } from './shared-service/auth.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserAgendaComponent } from './user-agenda/user-agenda.component';
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,12 @@ import { UserAgendaComponent } from './user-agenda/user-agenda.component';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'firestarter'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireFunctionsModule,
     AppRoutingModule,
     FormsModule,
     HttpModule,
