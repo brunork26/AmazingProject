@@ -4,7 +4,7 @@ Aplicação de notificações para médicos e pacientes. Desenvolvida na cadeira
 Dependencias necessárias:
 - Nodejs (https://nodejs.org/en/)
 - NPM (instalado junto ao nodejs, acredito que em todas as plataformas, caso contrário: https://www.npmjs.com/get-npm)
-- Angular/cli (https://cli.angular.io)
+- Angular/cli (https://cli.angular.io) -> npm install -g @angular/cli
 
 Inicializando Projeto:
 - Clonar o código
