@@ -15,19 +15,19 @@
   <ng-template #authenticated>
     <mat-grid-list cols="12" class="overflow">
       <mat-grid-tile [colspan]="3" [rowspan]="3">
-        <mat-card>
+        <mat-card class="login">
             <div *ngIf="auth.user | async as user">
                 <h3>Olá, {{ user.displayName }}</h3>
                 <img class="card-img-top" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
                 <p class="text-truncate">Email: {{ user.email }}</p>
-                <button mat-flat-button (click)="logout()" style="margin-left:5px;">Login</button> 
+                <button mat-flat-button (click)="logout()" style="margin-left:5px;">Logout</button> 
             </div>
         </mat-card>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="7">
-        </mat-grid-tile>
-      <mat-grid-tile [colspan]="8" [rowspan]="7">
-        <app-user-agenda></app-user-agenda>
+      <mat-grid-tile [colspan]="0" [rowspan]="8">
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="8" [rowspan]="8">
+        <app-user-agenda class="agenda" style="overflow: auto; height: 700px"></app-user-agenda>
       </mat-grid-tile>
     </mat-grid-list>
   </ng-template>

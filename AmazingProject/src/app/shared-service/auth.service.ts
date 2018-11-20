@@ -62,10 +62,15 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(credential => {
         console.log(credential)
-        // let user: User = credential.user;
+        const user: User = {
+          displayName: displayName,
+          email: credential.user.email,
+          photoURL: credential.user.photoURL,
+          uid: credential.user.uid
+        }
         // console.log(user);
         // user.displayName = displayName;
-        return this.updateUserData(credential.user);
+        return this.updateUserData(user);
       })
       .catch(error => this.handleError(error));
   }

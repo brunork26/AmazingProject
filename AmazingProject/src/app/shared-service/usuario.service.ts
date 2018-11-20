@@ -34,12 +34,13 @@ export class UsuarioService {
 
   public getContact() {
     console.log(this.userId)
-    const contactList = this.afs.collection('contacts');
+    // const contactList = this.afs.collection('contacts');
     // const contactRef: AngularFirestoreDocument<Contact> = this.afs.doc(
     //   `contacts/${this.userId}/contacts/`
     // );
     const contacts = this.afs.collection(`users/${this.userId}/contacts`);
     console.log(contacts.valueChanges);
+    console.log(contacts.get().subscribe(data=>console.log(data)));
     return contacts.valueChanges();
   }
 
