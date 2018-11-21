@@ -25,7 +25,7 @@
   </mat-form-field> -->
   <br/>
   <button mat-flat-button style="margin-left:5px;" routerLink="/home">Voltar</button>
-  <button mat-flat-button style="margin-left:5px;" class="signup" type="submit">Cadastrar</button> 
+  <button mat-flat-button style="margin-left:5px;" class="signup" type="submit" [disabled]="!form.valid">Cadastrar</button> 
   <!-- <button mat-flat-button [routerLink]="['/cadastro-paciente']" style="float:right;margin-left: 3px;">Cadastrar Paciente</button>
   <button mat-flat-button [routerLink]="['/cadastro-medico']" style="float:right"> Cadastrar Médico </button> -->
 </form>
