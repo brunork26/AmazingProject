@@ -1,13 +1,27 @@
-<ul class="list-group">
-  <li class="container list-group-item" *ngFor="let cct of contacts">
-    <div class="container row">
-      <div class="col-6"> {{ cct.name }} </div>
-      <div class="col-6">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Data Marcado</th>
+      <th scope="col">Enviar SMS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cct of contacts; let i = index">
+      <th scope="row">{{i + 1}}</th>
+      <td>
+        <div> {{ cct.name }} </div>
+      </td>
+      <td>
+        <div>
+          <div> {{ cct.date }} </div>
+        </div>
+      </td>
+      <td>
         <app-tela-de-envio [msg]="'Olá ' + cct.name + ' você confirma sua consulta para o dia: ' + cct.date + '. \n Envie 1 caso confirme ou 2 para cancelamento.'"
           [number]="cct.phone">
         </app-tela-de-envio>
-      </div>
-    </div>
-    <br>
-  </li>
-</ul>
+      </td>
+  </tbody>
+</table>
