@@ -1,9 +1,9 @@
-mat-card.container {
+div.container {
     top: 100px;
     margin-bottom: 120px;
     min-width: 1200px;
 }
   
-  mat-card.container > * {
+  div.container > * {
     width: 100%;
 }

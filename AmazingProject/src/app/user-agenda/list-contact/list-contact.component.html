@@ -1,11 +1,13 @@
-<mat-list>
-    <mat-list-item class="card-list" *ngFor="let cct of contacts"> 
-      <mat-card>
-        {{ cct.name }} 
-        <app-tela-de-envio 
-          [msg]="'Olá ' + cct.name + ' você confirma sua consulta para o dia: ' + cct.date + '. \n Envie 1 caso confirme ou 2 para cancelamento.'"  
+<ul class="list-group">
+  <li class="container list-group-item" *ngFor="let cct of contacts">
+    <div class="container row">
+      <div class="col-6"> {{ cct.name }} </div>
+      <div class="col-6">
+        <app-tela-de-envio [msg]="'Olá ' + cct.name + ' você confirma sua consulta para o dia: ' + cct.date + '. \n Envie 1 caso confirme ou 2 para cancelamento.'"
           [number]="cct.phone">
         </app-tela-de-envio>
-      </mat-card>
-    </mat-list-item>
-</mat-list>
+      </div>
+    </div>
+    <br>
+  </li>
+</ul>

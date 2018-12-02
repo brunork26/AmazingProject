@@ -1,9 +1,12 @@
-<mat-card class="centered"><h4>Adicione um paciente</h4></mat-card>
-    <app-add-contact [(contact)]="contact"></app-add-contact>
-<br/>
-
-
-<mat-card class="centered"><h4>Lista de pacientes</h4></mat-card>
-    <app-list-contact></app-list-contact>
-<br/>
-
+<div class="container row">
+    <div class="centered col-6">
+        <h4>Adicione um paciente</h4>
+        <app-add-contact [(contact)]="contact"></app-add-contact>
+        <br />
+    </div>
+    <div class="centered col-6">
+        <h4>Lista de pacientes</h4>
+        <app-list-contact></app-list-contact>
+        <br />
+    </div>
+</div>

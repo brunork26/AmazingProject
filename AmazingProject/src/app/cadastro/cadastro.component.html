@@ -1,31 +1,30 @@
-<mat-card class="centered"><h3>Faça Seu Cadastro</h3></mat-card>
-<br/>
-
-<form class="form centered" [formGroup]="form" (ngSubmit)="tryRegister()">
-  Preencha o cadastro abaixo. Em seguida, selecione uma das opções disponíveis.
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="E-mail" formControlName="email">
-    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-  </mat-form-field>
-  <br/>
-  <mat-form-field class="mat-full" appearance="standard" >
-    <input matInput placeholder="Senha" type="password" formControlName="password">
-    <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon> [type]="hide ? 'password' : 'text'" -->
-  </mat-form-field>
-  <!-- <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="CREMERS" formControlName="cremers">
-  </mat-form-field> -->
-  <br/>
-  <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="Nome" formControlName="name">
-  </mat-form-field>
-  <br/>
-  <!-- <mat-form-field class="mat-full" appearance="standard">
-    <input matInput placeholder="CPF" formControlName="cpf">
-  </mat-form-field> -->
-  <br/>
-  <button mat-flat-button style="margin-left:5px;" routerLink="/home">Voltar</button>
-  <button mat-flat-button style="margin-left:5px;" class="signup" type="submit" [disabled]="!form.valid">Cadastrar</button> 
-  <!-- <button mat-flat-button [routerLink]="['/cadastro-paciente']" style="float:right;margin-left: 3px;">Cadastrar Paciente</button>
-  <button mat-flat-button [routerLink]="['/cadastro-medico']" style="float:right"> Cadastrar Médico </button> -->
-</form>
+<div class="container">
+  <form class="form centered" [formGroup]="form" (ngSubmit)="tryRegister()">
+    <mat-card class="centered"><h3>Faça Seu Cadastro</h3></mat-card>
+    <br/>
+    Preencha o cadastro abaixo. Em seguida, selecione uma das opções disponíveis.
+    <mat-form-field class="mat-full" appearance="standard">
+      <input matInput placeholder="E-mail" formControlName="email">
+      <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+    </mat-form-field>
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard" >
+      <input matInput placeholder="Senha" type="password" formControlName="password">
+      <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon> [type]="hide ? 'password' : 'text'" -->
+    </mat-form-field>
+    <!-- <mat-form-field class="mat-full" appearance="standard">
+      <input matInput placeholder="CREMERS" formControlName="cremers">
+    </mat-form-field> -->
+    <br/>
+    <mat-form-field class="mat-full" appearance="standard">
+      <input matInput placeholder="Nome" formControlName="name">
+    </mat-form-field>
+    <br/>
+    <!-- <mat-form-field class="mat-full" appearance="standard">
+      <input matInput placeholder="CPF" formControlName="cpf">
+    </mat-form-field> -->
+    <br/>
+    <button mat-flat-button style="float: left;margin-left:5px;" routerLink="/home">Voltar</button>
+    <button mat-flat-button style="margin-left:5px;" class="signup" type="submit" [disabled]="!form.valid">Cadastrar</button> 
+  </form>
+</div>
