@@ -19,7 +19,7 @@
           <div class="login container">
             <div *ngIf="auth.user | async as user">
               <h3>Olá, {{ user.displayName }}</h3>
-              <img class="card-img-top" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
+              <img class="" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
               <p class="text-truncate">Email: {{ user.email }}</p>
               <button mat-flat-button (click)="logout()" style="margin-left:5px;">Logout</button>
             </div>

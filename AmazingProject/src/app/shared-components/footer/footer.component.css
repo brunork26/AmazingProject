@@ -6,4 +6,5 @@ mat-toolbar.footer {
     height: 64px;
     background-color: RGB(31, 58, 147);
     color: white;
+    margin-top: 500px;
 }
