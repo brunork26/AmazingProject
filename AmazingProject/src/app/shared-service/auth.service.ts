@@ -83,7 +83,7 @@ export class AuthService {
         console.log(credential)
         return this.updateUserData(credential.user);
       })
-      .catch(error => this.handleError(error));
+      .catch(error => this.handleError(error) );
   }
 
   public signOut() {
@@ -97,7 +97,8 @@ export class AuthService {
   private handleError(error: Error) {
     console.error(error);
     if(error.message == "The email address is badly formatted.")    
-      alert("Formato de Email Inválido");      
+      alert("Formato de Email Inválido");  
+          
     //alert(error.message);
   }
 

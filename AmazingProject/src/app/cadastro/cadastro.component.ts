@@ -42,13 +42,16 @@ export class CadastroComponent implements OnInit {
     this.authService.emailSignUp(value.email, value.password, value.name)
     .then(res => {
       console.log(res);
-      alert('Registrou');
-      this.router.navigate(['/perfil'])
-      //this.userService.createUser({name: this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res['user'].uid});
+      if(res != undefined){
+        alert('Registrou');
+        this.router.navigate(['/perfil']);
+      }
+      // this.userService.createUser({name: 
+      // this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res['user'].uid});
     }, err => {
       console.log(err);
       alert('Erro');
-    });
+    }); 
   }
 
 }
