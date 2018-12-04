@@ -57,7 +57,7 @@ export class UsuarioService {
     const data = content
     var message = '5b6p5Y+344GX44G+44GX44Gf77yB44GK44KB44Gn44Go44GG77yB';
     this.storage.ref('nome').putString(message, 'base64').then(data=>{
-      console.log(data);
+     // console.log(data.snapshotChanges());
     });
 
     return contacts.add(data);
