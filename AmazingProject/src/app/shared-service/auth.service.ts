@@ -100,6 +100,8 @@ export class AuthService {
       alert("Formato de Email Inválido");  
     if(error.message == "The email address is already in use by another account.")   
       alert("Este email já esta sendo utilizado por outra conta!");
+    if(error.message == "Password should be at least 6 characters")
+      alert("A senha precisa ter no mínimo 6 caracteres!");
     //alert(error.message);
   }
 
