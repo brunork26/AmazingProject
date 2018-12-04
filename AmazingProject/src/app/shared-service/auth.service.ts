@@ -110,6 +110,9 @@ export class AuthService {
       alert("A senha precisa ter no mínimo 6 caracteres!");
     if(error.message = "There is no user record corresponding to this identifier. The user may have been deleted.")
       alert(" Usuário inexistente ou deletado");
+    if(error.message = "The password is invalid or the user does not have a password.")
+      alert("Senha inválida");
+    
     //alert(error.message);
   }
 
