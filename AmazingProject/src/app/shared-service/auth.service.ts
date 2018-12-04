@@ -96,7 +96,9 @@ export class AuthService {
   // If error, console log and notify user
   private handleError(error: Error) {
     console.error(error);
-    alert(error.message);
+    if(error.message == "The email address is badly formatted.")    
+      alert("Formato de Email Inválido");      
+    //alert(error.message);
   }
 
   // get userId
