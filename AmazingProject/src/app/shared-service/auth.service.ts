@@ -108,6 +108,8 @@ export class AuthService {
       return("Este email já esta sendo utilizado por outra conta!");
     if(error.message == "Password should be at least 6 characters")
       return("A senha precisa ter no mínimo 6 caracteres!");
+    if(error.message = "There is no user record corresponding to this identifier. The user may have been deleted.")
+      return(" Usuário inexistente ou deletado");
     //alert(error.message);
   }
 
