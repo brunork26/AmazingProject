@@ -104,8 +104,10 @@ export class AuthService {
     console.error(error);
     if(error.message == "The email address is badly formatted.")   
       return("Formato de Email Inválido");  
-    if(error.message == "The email address is already in use by another account.")   
+    if(error.message == "The email address is already in use by another account.")
       return("Este email já esta sendo utilizado por outra conta!");
+    if(error.message == "Password should be at least 6 characters")
+      return("A senha precisa ter no mínimo 6 caracteres!");
     //alert(error.message);
   }
 
