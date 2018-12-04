@@ -98,7 +98,8 @@ export class AuthService {
     console.error(error);
     if(error.message == "The email address is badly formatted.")    
       alert("Formato de Email Inválido");  
-          
+    if(error.message == "The email address is already in use by another account.");     
+      alert("Este email já esta sendo utilizado por outra conta!");
     //alert(error.message);
   }
 

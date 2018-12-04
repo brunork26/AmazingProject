@@ -40,12 +40,13 @@ export class CadastroComponent implements OnInit {
     const value = this.form.value;
     console.log(value);
     this.authService.emailSignUp(value.email, value.password, value.name)
-    .then(res => {
+    .then(res =>{
       console.log(res);
-      if(res != undefined){
+     /* if(value != undefined){
         alert('Registrou');
         this.router.navigate(['/perfil']);
-      }
+      } */
+      this.router.navigate(['/perfil']);
       // this.userService.createUser({name: 
       // this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res['user'].uid});
     }, err => {
@@ -53,5 +54,4 @@ export class CadastroComponent implements OnInit {
       alert('Erro');
     }); 
   }
-
 }
