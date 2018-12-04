@@ -54,10 +54,12 @@ export class UsuarioService {
     return contacts.add(data);
   }
 
-  public excluir(ctt){
-    console.log(ctt)
+  public excluir(index){
     const contacts = this.afs.collection(`users/${this.userId}/contacts`);
-    console.log(contacts.get().subscribe(data=>console.log(data)));
+    contacts.stateChanges().subscribe(data=>{
+      const id = data[index].payload.doc.id;
+      contacts.doc(id).delete();
+    })
     
   }
   // updateContact(id: string, data: any) {
