@@ -26,7 +26,7 @@ import { AuthService } from './shared-service/auth.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserAgendaComponent } from './user-agenda/user-agenda.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { AddContactComponent } from './user-agenda/add-contact/add-contact.component';
 import { ListContactComponent } from './user-agenda/list-contact/list-contact.component';
@@ -62,7 +62,10 @@ import { ListContactComponent } from './user-agenda/list-contact/list-contact.co
     ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    { provide: StorageBucket, useValue: 'gs://amazing-project-a3006.appspot.com' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

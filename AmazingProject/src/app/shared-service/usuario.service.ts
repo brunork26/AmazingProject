@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,10 @@ export class UsuarioService {
   public contactsCollection: AngularFirestoreCollection<any>;
   public contactDocument:   AngularFirestoreDocument<any>;
   public userId: string;
-  constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {
+  constructor(
+    private afs: AngularFirestore, 
+    private afAuth: AngularFireAuth,
+    private storage: AngularFireStorage) {
     // this.afAuth.authState.subscribe(user => {
     //   if(user) this.userId = user.uid
     // })
@@ -51,6 +55,11 @@ export class UsuarioService {
     // );
     const contacts = this.afs.collection(`users/${this.userId}/contacts`);
     const data = content
+    var message = '5b6p5Y+344GX44G+44GX44Gf77yB44GK44KB44Gn44Go44GG77yB';
+    this.storage.ref('nome').putString(message, 'base64').then(data=>{
+      console.log(data);
+    });
+
     return contacts.add(data);
   }
 

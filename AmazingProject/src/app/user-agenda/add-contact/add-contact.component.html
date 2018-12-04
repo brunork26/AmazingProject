@@ -16,7 +16,7 @@
     </mat-form-field>
     <br/>
     <br/>
-    <button mat-flat-button style="margin-left:5px;" class="signup" type="submit">Adicionar</button> 
+    <button [disabled]="!form.valid" mat-flat-button style="margin-left:5px;" class="signup" type="submit">Adicionar</button> 
   </form>
 
  
