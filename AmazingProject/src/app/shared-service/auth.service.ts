@@ -103,14 +103,14 @@ export class AuthService {
   private handleError(error: Error) {
     console.error(error);
     if(error.message == "The email address is badly formatted.")   
-      return("Formato de Email Inválido");  
+      alert("Formato de Email Inválido");  
     if(error.message == "The email address is already in use by another account.")
-      return("Este email já esta sendo utilizado por outra conta!");
+      alert("Este email já esta sendo utilizado por outra conta!");
     if(error.message == "Password should be at least 6 characters")
-      return("A senha precisa ter no mínimo 6 caracteres!");
+      alert("A senha precisa ter no mínimo 6 caracteres!");
     if(error.message = "There is no user record corresponding to this identifier. The user may have been deleted.")
-      return(" Usuário inexistente ou deletado");
-    alert(error.message);
+      alert(" Usuário inexistente ou deletado");
+    //alert(error.message);
   }
 
   // get userId
