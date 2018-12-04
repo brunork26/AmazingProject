@@ -42,16 +42,24 @@ export class CadastroComponent implements OnInit {
     this.authService.emailSignUp(value.email, value.password, value.name)
     .then(res =>{
       console.log(res);
-     /* if(value != undefined){
-        alert('Registrou');
+      if(res != undefined){
+        alert(res);
+      } else{
         this.router.navigate(['/perfil']);
-      } */
-      this.router.navigate(['/perfil']);
+      }
       // this.userService.createUser({name: 
       // this.form.get('name').value, cpf: this.form.get('cpf').value, cremers: this.form.get('cremers').value, userId: res['user'].uid});
-    }, err => {
-      console.log(err);
-      alert('Erro');
     }); 
   }
+
+  async signInWithGoogle() {
+    await this.authService.googleLogin();
+    return await this.afterSignIn();
+  }
+
+  private afterSignIn() {
+    // Do after login stuff here, such router redirects, toast messages, etc.
+    return this.router.navigate(['/perfil']);
+  }
+  
 }

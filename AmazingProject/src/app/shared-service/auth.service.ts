@@ -52,6 +52,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then(credential => {
         // this.notify.update('Welcome to Firestarter!!!', 'success');
+        
         return this.updateUserData(credential.user);
       })
       .catch(error => this.handleError(error));
@@ -68,11 +69,11 @@ export class AuthService {
           photoURL: credential.user.photoURL,
           uid: credential.user.uid
         }
-        // console.log(user);
-        // user.displayName = displayName;
         return this.updateUserData(user);
       })
-      .catch(error => this.handleError(error));
+      .catch(error => {
+        return this.handleError(error);
+      });
   }
 
   public emailLogin(email: string, password: string) {
@@ -80,10 +81,15 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(credential => {
         console.log('login')
-        console.log(credential)
-        return this.updateUserData(credential.user);
+        console.log(credential.user)
+        return this.afs.doc<User>(`users/${credential.user.uid}`).valueChanges().subscribe(user=> {
+          return this.updateUserData(user);
+        })
       })
-      .catch(error => this.handleError(error) );
+      .catch(error => {
+        return this.handleError(error);
+      } 
+      );
   }
 
   public signOut() {
@@ -97,9 +103,9 @@ export class AuthService {
   private handleError(error: Error) {
     console.error(error);
     if(error.message == "The email address is badly formatted.")   
-      alert("Formato de Email Inválido");  
+      return("Formato de Email Inválido");  
     if(error.message == "The email address is already in use by another account.")   
-      alert("Este email já esta sendo utilizado por outra conta!");
+      return("Este email já esta sendo utilizado por outra conta!");
     //alert(error.message);
   }
 
@@ -110,6 +116,7 @@ export class AuthService {
 
   // Sets user data to firestore after succesful login
   private updateUserData(user: User) {
+    console.log(user)
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(
       `users/${user.uid}`
     );
@@ -122,5 +129,7 @@ export class AuthService {
     };
     return userRef.set(data);
   }
+
+
 
 }
