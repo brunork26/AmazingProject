@@ -100,7 +100,7 @@ export class AuthService {
   }
 
   // If error, console log and notify user
-  private handleError(error: Error) {
+  private handleError(error: Error){
     console.error(error);
     if(error.message == "The email address is badly formatted.")   
       alert("Formato de Email Inválido");  
@@ -112,8 +112,6 @@ export class AuthService {
       alert(" Usuário inexistente ou deletado");
     if(error.message = "The password is invalid or the user does not have a password.")
       alert("Senha inválida");
-    
-    //alert(error.message);
   }
 
   // get userId
