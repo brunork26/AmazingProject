@@ -13,6 +13,7 @@ export class ListContactComponent implements OnInit {
   constructor(private userService: UsuarioService) {
     this.userService.getContact().subscribe(
       data => {
+        console.log('lista')
         console.log(data)
         this.contacts = data;
       }
@@ -22,9 +23,8 @@ export class ListContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  excluirPaciente(numero: number,data:Date){
-    this.userService.excluir(numero,data)
-    alert(numero + "-_" + data); 
+  excluirPaciente(ctt){
+    this.userService.excluir(ctt); 
   }
 
 }

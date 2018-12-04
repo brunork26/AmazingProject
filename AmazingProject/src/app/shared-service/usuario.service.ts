@@ -32,12 +32,6 @@ export class UsuarioService {
     );
   }
 
-  excluir(numero : number, data: Date){
-    const contacts = this.afs.collection(`users/${this.userId}/contacts`);
-    console.log(contacts.get().subscribe(data=>console.log(data)));
-    
-  }
-
   public getContact() {
     console.log(this.userId)
     // const contactList = this.afs.collection('contacts');
@@ -45,8 +39,7 @@ export class UsuarioService {
     //   `contacts/${this.userId}/contacts/`
     // );
     const contacts = this.afs.collection(`users/${this.userId}/contacts`);
-    console.log(contacts.valueChanges);
-    console.log(contacts.get().subscribe(data=>console.log(data)));
+    console.log(contacts)
     return contacts.valueChanges();
   }
 
@@ -61,6 +54,12 @@ export class UsuarioService {
     return contacts.add(data);
   }
 
+  public excluir(ctt){
+    console.log(ctt)
+    const contacts = this.afs.collection(`users/${this.userId}/contacts`);
+    console.log(contacts.get().subscribe(data=>console.log(data)));
+    
+  }
   // updateContact(id: string, data: any) {
   //   return this.getContact(id).update(data);
   // }
