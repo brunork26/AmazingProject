@@ -24,7 +24,7 @@ export class ListContactComponent implements OnInit {
 
   excluirPaciente(numero: number,data:Date){
     this.userService.excluir(numero,data)
-    alert(numero + "-" + data); 
+    alert(numero + "-_" + data); 
   }
 
 }
